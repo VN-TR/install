@@ -83,3 +83,22 @@ wget http://download.qt.io/official_releases/qt/5.9/5.9.8/qt-opensource-linux-x6
 chmod +x qt-opensource-linux-x64-5.9.8.run
 ./qt-opensource-linux-x64-5.9.8.run
 echo "export QTDIR=~/Qt5.9.8/5.9.8/gcc_64" >> ~/.bashrc
+
+# install cartographer
+sudo apt-get update
+sudo apt-get install -y python-wstool python-rosdep ninja-build
+
+cd ~
+mkdir catkin_ws
+cd catkin_ws
+wstool init src
+wstool merge -t src https://gitee.com/izhengfan/cartographer_ros/raw/master/cartographer_ros.rosinstall
+wstool update -t src
+
+src/cartographer/scripts/install_proto3.sh
+sudo rosdep init
+rosdep update
+rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
+
+catkin_make_isolated --install --use-ninja
+
