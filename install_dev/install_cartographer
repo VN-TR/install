@@ -1,0 +1,35 @@
+#!/bin/bash
+
+#---Automatically Generated from template 'bash' wrote by @aliben---
+# @Copyright (C) 2019 All rights reserved.
+# @file: install_cartographer
+# @author: yjlu@visionnav.com
+# @created_date: 2018-05-02
+# @brief: install cartographer
+# @details: TODO
+#---***********************************************---
+
+
+#---Variables
+CREATED_TIME=`date '+%Y-%m-%d %H:%M:%S'`
+CREATED_YEAR=`date '+%Y'`
+
+#---Shell Command
+
+# install cartographer
+sudo apt-get update
+sudo apt-get install -y python-wstool python-rosdep ninja-build
+
+cd ~
+mkdir catkin_ws
+cd catkin_ws
+wstool init src
+wstool merge -t src https://gitee.com/izhengfan/cartographer_ros/raw/master/cartographer_ros.rosinstall
+wstool update -t src
+
+src/cartographer/scripts/install_proto3.sh
+sudo rosdep init
+rosdep update
+rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
+
+catkin_make_isolated --install --use-ninja
