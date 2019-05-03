@@ -19,6 +19,7 @@ CREATED_YEAR=`date '+%Y'`
 # change ubuntu mirrors
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo cp sources.list /etc/apt/sources.list
+#sudo add-apt-repository "https://mirrors.tuna.tsinghua.edu.cn/ubuntu $(lsb_release -cs) stable"
 
 sudo apt update
 sudo apt install -y \
