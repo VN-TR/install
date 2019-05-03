@@ -13,6 +13,7 @@ sudo chmod +x setup.sh
 sudo ./setup.sh
 ```
 
+
 * install_env
 > 安装程序运行所需环境,主要是安装依赖库设置所需的环境变量，不应该下载任何私有代码
 
@@ -21,5 +22,6 @@ sudo ./setup.sh
 
 * install_dev
 > 安装开发环境，包括开发依赖库，下载并编译程序所使用的opensource库，clone正在开发的repositories,需要有对应repositories的权限才能使用
+
 
 

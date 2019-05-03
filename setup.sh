@@ -25,8 +25,8 @@ cd install
 
 # setup env
 sudo chmod +x install_env
-sudo ./install_env
+./install_env
 sudo chmod +x install_exec
-sudo ./install_exec
+./install_exec
 
 

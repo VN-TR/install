@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#---Automatically Generated from template 'bash' wrote by @aliben---
+# @Copyright (C) 2019 All rights reserved.
+# @file: install_pepperlfuchs
+# @author: yjlu@visionnav.com
+# @created_date: 2018-05-02
+# @brief: install pepperl_fuchs driver
+# @details: TODO
+#---***********************************************---
+
+
+#---Variables
+CREATED_TIME=`date '+%Y-%m-%d %H:%M:%S'`
+CREATED_YEAR=`date '+%Y'`
+
+#---Shell Command
+
+cd ~
+mkdir -p catkin_ws/src
+cd catkin_ws/src
+
+git clone https://github.com/yoyoyohola/pepperl_fuchs.git
+cd ..
+
+# make 
+# if have not installed cartographer, use
+# catkin_make
+# else, use
+# catkin_make_isolated --install --use-ninja
+
+

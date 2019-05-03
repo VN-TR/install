@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#---Automatically Generated from template 'bash' wrote by @aliben---
+# @Copyright (C) 2019 All rights reserved.
+# @file: install_laserslam
+# @author: yjlu@visionnav.com
+# @created_date: 2018-05-03
+# @brief: install the laserslam repository
+# @details: TODO
+#---***********************************************---
+
+
+#---Variables
+CREATED_TIME=`date '+%Y-%m-%d %H:%M:%S'`
+CREATED_YEAR=`date '+%Y'`
+
+#---Shell Command
+
+cd ~/catkin_ws/src
+git clone https://github.com/VN-TR/robot_simulator
+cd robot_simulator
+sudo chmod +x pre_build.bash
+./pre_build.bash
+
+# make 
+# if have not installed cartographer, use
+# catkin_make
+# else, use
+# catkin_make_isolated --install --use-ninja
+
+
