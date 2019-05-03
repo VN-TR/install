@@ -93,5 +93,8 @@ chmod +x qt-opensource-linux-x64-5.9.8.run
 echo "export QTDIR=~/Qt5.9.8/5.9.8/gcc_64" >> ~/.bashrc
 source ~/.bashrc
 
+# upgrade all
+# sudo apt update
+# sudo apt upgrade
 
 
