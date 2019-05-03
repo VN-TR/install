@@ -1,0 +1,44 @@
+#!/bin/bash
+
+#---Automatically Generated from template 'bash' wrote by @aliben---
+# @Copyright (C) 2019 All rights reserved.
+# @file: install_all
+# @author: yjlu@visionnav.com
+# @created_date: 2018-05-02
+# @brief: install cartographer
+# @details: TODO
+#---***********************************************---
+
+
+#---Variables
+CREATED_TIME=`date '+%Y-%m-%d %H:%M:%S'`
+CREATED_YEAR=`date '+%Y'`
+
+#---Shell Command
+
+# install cartographer
+sudo apt-get update
+sudo apt-get install -y python-wstool python-rosdep ninja-build
+
+cd ~
+mkdir catkin_ws
+cd catkin_ws
+
+# clone all repos
+git clone --recursive https://github.com/VN-TR/src
+cd ~/catkin_ws/src/robot_simulator
+sudo chmod +x pre_build.bash
+./pre_build.bash
+
+cd ~/catkin_ws
+wstool init src
+wstool merge -t src https://gitee.coizhengfan/cartographer_ros/raw/master/cartographer_ros.rosinstall
+wstool update -t src
+
+src/cartographer/scripts/install_proto3.sh
+sudo rosdep init
+rosdep update
+rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
+
+# make
+catkin_make_isolated --install --use-ninja
