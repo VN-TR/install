@@ -32,5 +32,6 @@ sudo ./setup.sh
 * install_dev
 > 安装开发环境，包括开发依赖库，下载并编译程序所使用的opensource库，clone正在开发的repositories,需要有对应repositories的权限才能使用
 
-
+## TODO
+* setup hosts & ROS_MASTER_URI
 
