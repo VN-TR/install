@@ -98,5 +98,8 @@ source ~/.bashrc
 sudo usermod -a -G dialout vn
 sudo chmod 666 /dev/ttyS0
 sudo chmod 666 /dev/ttyS1
+# upgrade all
+# sudo apt update
+# sudo apt upgrade
 
 
