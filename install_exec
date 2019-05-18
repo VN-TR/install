@@ -16,7 +16,28 @@ CREATED_YEAR=`date '+%Y'`
 
 #---Shell Command
 # TODO: setup the executable files
-# 
+#
 
-echo "warning: install_exec is not implemented"
+echo "### apt pkg required by cartographer ..."
+sudo apt install python-wstool python-rosdep ninja-build
+sudo apt install lua5.2 liblua5.2-dev libsuitesparse-dev liblapack-dev libatlas-base-dev libgflags-dev google-mock libgoogle-glog-dev libboost-dev
+sudo apt install qtbase5-dev libqt5gui5 libqt5core5a libpcl-dev libcairo2-dev
+sudo apt install ros-melodic-desktop ros-melodic-roslaunch ros-melodic-rosbag ros-melodic-pcl-conversions ros-melodic-eigen-conversions ros-melodic-tf2  ros-melodic-tf2-ros ros-melodic-tf2-eigen ros-melodic-visualization-msgs ros-melodic-geometry-msgs ros-melodic-message-generation ros-melodic-nav-msgs ros-melodic-sensor-msgs ros-melodic-robot-state-publisher ros-melodic-message-runtime ros-melodic-rosunit
+
+echo "### install protobuf v3.4.1 into /usr/local, required by cartographer ..."
+cd ~
+git clone https://gitee.com/izhengfan/protobuf_v341_install.git
+cd protobuf_v341_install
+./install.sh
+
+echo "### install cartographer into ~/.catkin_local  ..."
+cd ~
+git clone https://gitee.com/izhengfan/cartographer_ros.git --branch=binary_install --depth=1 .catkin_local
+cd .catkin_local
+sed -i "s/fzheng/$USER/g" setup.sh local_setup.sh _setup_util.py share/cartographer/cartographer-config.cmake lib/pkgconfig/cartographer_ros.pc lib/pkgconfig/cartographer_ros_msgs.pc lib/pkgconfig/cartographer_rviz.pc share/cartographer_rviz/cmake/cartographer_rvizConfig.cmake share/cartographer/cmake/CartographerTargets.cmake share/cartographer_ros/cmake/cartographer_rosConfig.cmake share/roseus/ros/cartographer_ros_msgs/manifest.l share/cartographer_ros_msgs/cmake/cartographer_ros_msgsConfig.cmake
+source ~/.catkin_local/setup.bash
+echo "source ~/.catkin_local/setup.bash" >> ~/.bashrc
+
+
+# echo "warning: install_exec is not implemented"
 
