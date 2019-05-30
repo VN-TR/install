@@ -17,28 +17,42 @@ CREATED_YEAR=`date '+%Y'`
 #---Shell Command
 
 # install cartographer
-sudo apt-get update
-sudo apt-get install -y python-wstool python-rosdep ninja-build
+# sudo apt-get update
+# sudo apt-get install -y python-wstool python-rosdep ninja-build
 
 cd ~
-mkdir catkin_ws
-cd catkin_ws
+mkdir -p catkin_ws/src
+cd catkin_ws/src
 
-# clone all repos
-git clone --recursive https://github.com/VN-TR/src
-cd ~/catkin_ws/src/robot_simulator
-sudo chmod +x pre_build.bash
+git clone https://github.com/VN-TR/LaserSlam.git
+git clone -recursive https://github.com/VN-TR/navigator.git
+git clone https://github.com/yoyoyohola/pepperl_fuchs.git
+git clone https://github.com/VN-TR/LaserSlamTool.git
+git clone https://github.com/VN-TR/robot_simulator
+https://github.com/VN-TR/PathPlanning.git
+
+cd robot_simulator
+chmod +x pre_build.bash
 ./pre_build.bash
 
-cd ~/catkin_ws
-wstool init src
-wstool merge -t src https://gitee.com/izhengfan/cartographer_ros/raw/master/cartographer_ros.rosinstall
-wstool update -t src
+cd ~/catkin_ws/src/LaserSlamTool/script
+./tar_vn_package.bash ~/catkin_ws
 
-src/cartographer/scripts/install_proto3.sh
-sudo rosdep init
-rosdep update
-rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
+# clone all repos
+#git clone --recursive https://github.com/VN-TR/src
+#cd ~/catkin_ws/src/robot_simulator
+#sudo chmod +x pre_build.bash
+#./pre_build.bash
+
+#cd ~/catkin_ws
+#wstool init src
+#wstool merge -t src https://gitee.com/izhengfan/cartographer_ros/raw/master/cartographer_ros.rosinstall
+#wstool update -t src
+
+#src/cartographer/scripts/install_proto3.sh
+#sudo rosdep init
+#rosdep update
+#rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
 
 # make
-catkin_make_isolated --install --use-ninja
+#catkin_make_isolated --install --use-ninja
