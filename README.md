@@ -12,16 +12,7 @@ cd ~/Downloads
 sudo chmod +x setup.sh
 sudo ./setup.sh
 ```
-3. 當qt安裝彈出後，按照如下圖片進行操作
 
-![安裝QT——1](https://github.com/VN-TR/install/blob/master/pic/qt_1.png)
-![安裝QT——2](https://github.com/VN-TR/install/blob/master/pic/qt_2.png)
-![安裝QT——3](https://github.com/VN-TR/install/blob/master/pic/qt_3.png)
-![安裝QT——4](https://github.com/VN-TR/install/blob/master/pic/qt_4.png)
-![安裝QT——5](https://github.com/VN-TR/install/blob/master/pic/qt_5.png)
-![安裝QT——6](https://github.com/VN-TR/install/blob/master/pic/qt_6.png)
-![安裝QT——7](https://github.com/VN-TR/install/blob/master/pic/qt_7.png)
-![安裝QT——8](https://github.com/VN-TR/install/blob/master/pic/qt_8.png)
 
 * install_env
 > 安装程序运行所需环境,主要是安装依赖库设置所需的环境变量，不应该下载任何私有代码
