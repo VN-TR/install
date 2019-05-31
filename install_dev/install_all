@@ -36,7 +36,7 @@ chmod +x pre_build.bash
 ./pre_build.bash
 
 cd ~/catkin_ws/src/LaserSlamTool/script
-./tar_vn_package.bash ~/catkin_ws
+./tar_vn_package.bash $HOME/catkin_ws
 
 # clone all repos
 #git clone --recursive https://github.com/VN-TR/src
