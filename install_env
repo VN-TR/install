@@ -55,6 +55,8 @@ ssh \
 qt5-default \
 qtmultimedia5-dev 
 
+sudo apt --fix-broken install -y
+
 #sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 #sudo sh -c '. /etc/lsb-release && echo "deb http://mirrors.ustc.edu.cn/ros/ubuntu/ $DISTRIB_CODENAME main" > /etc/apt/sources.list.d/ros-latest.list
 sudo sh -c '. /etc/lsb-release && echo "deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ $DISTRIB_CODENAME main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -106,5 +108,5 @@ sudo chmod 666 /dev/ttyS1
 # upgrade all
 # sudo apt update
 # sudo apt upgrade
-
+sudo apt --fix-broken install -y
 
