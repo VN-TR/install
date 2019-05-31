@@ -24,7 +24,7 @@ git clone https://github.com/VN-TR/install.git
 cd install
 
 # setup env
-sudo chmod +x install_env
+chmod +x install_env
 ./install_env
 sudo chmod +x install_exec
 ./install_exec
