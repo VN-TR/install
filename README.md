@@ -9,8 +9,8 @@ setup.sh的使用：
 2. 按下ctrl+alt+T打開一個terminal，複製下列代碼，按回車,如有需要，輸入本機密碼
 ```
 cd ~/Downloads
-sudo chmod +x setup.sh
-sudo ./setup.sh
+chmod +x setup.sh
+./setup.sh
 ```
 
 
