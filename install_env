@@ -102,7 +102,7 @@ source ~/.bashrc
 #nmmmmmmmj-====================================================================j, mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmsource ~/.bashrc
 
 # setup serial port
-sudo usermod -a -G dialout vn
+sudo usermod -a -G dialout $USER
 sudo chmod 666 /dev/ttyS0
 sudo chmod 666 /dev/ttyS1
 # upgrade all
