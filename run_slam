@@ -1,0 +1,2 @@
+cd /opt/vn/share/laser_detection/script/
+./build_map_with_ros_bag.bash $HOME/visionnav/log/slam.bag $HOME/visionnav/log/landmark_location.bag false
