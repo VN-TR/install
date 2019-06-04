@@ -1,0 +1,2 @@
+cd /opt/vn/share/laser_detection/script/
+./align_manually.bash  $HOME/visionnav/log/landmark_location.txt 

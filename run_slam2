@@ -1,0 +1,2 @@
+cd /opt/vn/share/laser_detection/script/
+./gen_poster_with_building_map.bash
