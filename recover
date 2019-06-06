@@ -1,0 +1,4 @@
+sudo rm -rf /var/lib/apt/lists/lock /var/lib/apt/lists/lock-frontend
+# need to be test
+# lsof /var/lib/dpkg/lock | sudo kill -9 
+# sudo kill -9 PID

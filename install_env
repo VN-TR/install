@@ -18,14 +18,18 @@ CREATED_YEAR=`date '+%Y'`
 #---Shell Command
 # change ubuntu mirrors
 
+sudo killall dpkg apt
 
 mkdir -p ~/visionnav/log
 
+# change source list
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo cp sources.list /etc/apt/sources.list
-#sudo add-apt-repository "https://mirrors.tuna.tsinghua.edu.cn/ubuntu $(lsb_release -cs) stable"
 
-apt-get update
+sudo sh -c '. /etc/lsb-release && echo "deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ $DISTRIB_CODENAME main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+
+sudo apt-get update
 sudo apt-get install -f -y
 #sudo apt udgrade
 
@@ -56,21 +60,15 @@ ssh \
 qt5-default \
 qtmultimedia5-dev \
 net-tools
+sudo apt install python-wstool python-rosdep ninja-build
+sudo apt install libsuitesparse-dev liblapack-dev libatlas-base-dev libgflags-dev google-mock libgoogle-glog-dev libboost-dev
+sudo apt install qtbase5-dev libqt5gui5 libqt5core5a libpcl-dev libcairo2-dev
 
 sudo apt-get --fix-broken install -y
 
-#sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-#sudo sh -c '. /etc/lsb-release && echo "deb http://mirrors.ustc.edu.cn/ros/ubuntu/ $DISTRIB_CODENAME main" > /etc/apt/sources.list.d/ros-latest.list
-sudo sh -c '. /etc/lsb-release && echo "deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ $DISTRIB_CODENAME main" > /etc/apt/sources.list.d/ros-latest.list'
 
-sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
-apt-get update
-sudo apt-get -y install ros-melodic-desktop-full \
-                    ros-melodic-map* \
-                    ros-melodic-joy* \
-                    ros-melodic-tf*  \
-		    ros-melodic-serial
-
+sudo apt-get update
+sudo apt-get -y install ros-melodic-desktop ros-melodic-map* ros-melodic-joy* ros-melodic-tf* ros-melodic-serial ros-melodic-navigation
 
 sudo rosdep init
 rosdep update
