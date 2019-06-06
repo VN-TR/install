@@ -54,7 +54,8 @@ lua5.3 \
 lua5.3-dev \
 ssh \
 qt5-default \
-qtmultimedia5-dev 
+qtmultimedia5-dev \
+net-tools
 
 sudo apt-get --fix-broken install -y
 
