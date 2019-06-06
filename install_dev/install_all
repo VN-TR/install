@@ -24,7 +24,7 @@ git clone https://github.com/VN-TR/LaserSlam.git
 git clone --recursive https://github.com/VN-TR/navigator.git
 git clone https://github.com/VN-TR/pepperl_fuchs.git
 git clone https://github.com/VN-TR/LaserSlamTool.git
-#git clone https://github.com/VN-TR/robot_simulator
+git clone https://github.com/VN-TR/robot_simulator
 git clone https://github.com/VN-TR/PathPlanning.git
 git clone https://github.com/YujieLu/LMS1xx.git
 
