@@ -36,7 +36,7 @@ git clone https://gitee.com/izhengfan/cartographer_ros.git --branch=binary_insta
 cd .catkin_local
 sed -i "s/fzheng/$USER/g" setup.sh local_setup.sh _setup_util.py share/cartographer/cartographer-config.cmake lib/pkgconfig/cartographer_ros.pc lib/pkgconfig/cartographer_ros_msgs.pc lib/pkgconfig/cartographer_rviz.pc share/cartographer_rviz/cmake/cartographer_rvizConfig.cmake share/cartographer/cmake/CartographerTargets.cmake share/cartographer_ros/cmake/cartographer_rosConfig.cmake share/roseus/ros/cartographer_ros_msgs/manifest.l share/cartographer_ros_msgs/cmake/cartographer_ros_msgsConfig.cmake
 source ~/.catkin_local/setup.bash
-echo "source ~/.catkin_local/setup.bash" >> ~/.bashrc
+#echo "source ~/.catkin_local/setup.bash" >> ~/.bashrc
 
 
 # echo "warning: install_exec is not implemented"
