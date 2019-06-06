@@ -1,3 +1,2 @@
 cd /opt/vn/share/laser_detection/script/
-rosparam set /use_sim_time false
 ./build_map_with_ros_bag.bash $HOME/visionnav/log/slam.bag $HOME/visionnav/log/landmark_location.txt false
