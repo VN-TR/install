@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#---Automatically Generated from template 'bash' wrote by @aliben---
+# @Copyright (C) 2019 All rights reserved.
+# @file: install_exec
+# @author: yjlu@visionnav.com
+# @created_date: 2018-05-02
+# @brief: setup the executable files
+# @details: TODO
+#---***********************************************---
+
+
+#---Variables
+CREATED_TIME=`date '+%Y-%m-%d %H:%M:%S'`
+CREATED_YEAR=`date '+%Y'`
+
+#---Shell Command
+# TODO: setup the executable files
+#
+
+cp ~/.bashrc ~/.bashrc.bak -i
+echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+echo "source ~/.catkin_local/setup.bash" >> ~/.bashrc
+echo "source /opt/vn/setup.bash" >> ~/.bashrc
+
+
+# echo "warning: install_exec is not implemented"
+

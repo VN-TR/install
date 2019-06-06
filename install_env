@@ -18,7 +18,7 @@ CREATED_YEAR=`date '+%Y'`
 #---Shell Command
 # change ubuntu mirrors
 
-cp ~/.bashrc ~/.bashrc.bak -i
+
 mkdir -p ~/visionnav/log
 
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak

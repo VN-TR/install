@@ -28,7 +28,5 @@ chmod +x install_env
 ./install_env
 chmod +x install_exec
 ./install_exec
-chmod +x install_bashrc
-./install_bashrc
 
 
