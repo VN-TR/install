@@ -21,7 +21,9 @@ CREATED_YEAR=`date '+%Y'`
 cp ~/.bashrc ~/.bashrc.bak -i
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 echo "source ~/.catkin_local/setup.bash" >> ~/.bashrc
-echo "source /opt/vn/setup.bash" >> ~/.bashrc
+
+#not now
+#echo "source /opt/vn/setup.bash" >> ~/.bashrc
 
 
 # echo "warning: install_exec is not implemented"
