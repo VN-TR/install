@@ -1,0 +1,40 @@
+#!/bin/bash
+
+#---Automatically Generated from template 'bash' wrote by @aliben---
+# @Copyright (C) 2018 All rights reserved.
+# @file: install_ros.bash
+# @author: aliben.develop@gmail.com
+# @created_date: 2018-11-06 14:33:45
+# @last_modified_date: 2018-11-08 08:23:48
+# @brief: TODO
+# @details: TODO
+#---***********************************************---
+
+
+#---Variables
+CREATED_TIME=`date '+%Y-%m-%d %H:%M:%S'`
+CREATED_YEAR=`date '+%Y'`
+
+#---Shell Command
+# change ubuntu mirrors
+
+# remove lock
+mkdir -p ~/nodejs_ws
+cd ~/nodejs_ws
+curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh -o install_nvm.sh
+bash install_nvm.sh
+
+source ~/.profile
+nvm install 10.1.0
+npm install -g express
+npm link express
+
+sudo apt update
+sudo apt install mysql-server
+
+git clone https://github.com/YujieLu/web.git
+
+
+
+
+

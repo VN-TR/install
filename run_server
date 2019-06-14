@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#---Automatically Generated from template 'bash' wrote by @aliben---
+# @Copyright (C) 2018 All rights reserved.
+# @file: install_ros.bash
+# @author: aliben.develop@gmail.com
+# @created_date: 2018-11-06 14:33:45
+# @last_modified_date: 2018-11-08 08:23:48
+# @brief: TODO
+# @details: TODO
+#---***********************************************---
+
+
+#---Variables
+CREATED_TIME=`date '+%Y-%m-%d %H:%M:%S'`
+CREATED_YEAR=`date '+%Y'`
+
+#---Shell Command
+# change ubuntu mirrors
+
+# remove lock
+cd ~/nodejs_ws/web/
+npm install
+npm install -g pm2
+npm run start_dev
+
+
